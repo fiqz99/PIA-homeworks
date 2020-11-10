@@ -11,12 +11,10 @@ h1 {
 	font-weight: bold;
 	text-shadow: 3px 3px #999999;
 }
-
 p {
   font-size: 12pt;
   font-family: Helvetica;
 }
-
 #sp1{
 	font-size: 48pt;
 	color: red;
@@ -44,21 +42,16 @@ p {
 	flex: 9;
 }
 #d3{
-	background-image: url("./images/rbg.png");
-	position:relative;
-	height: 83px;
-	overflow: hidden;
-}
-#d4{
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	background-color: #A2B964;
-	font-weight: bold;
 }
-#d5{
-	position:absolute;
-	bottom: 0;
+#banner{
+	background-image: url("./images/rbg.png");
+	position:relative;
+	height: 83px;
+	overflow: hidden;
 }
 footer{
 	background-color: #A2B964;
@@ -72,8 +65,36 @@ footer{
 	right: 2px;
 	
 }
-#dl1{
+dl{
+	font-weight: bold;
 	padding: 15px;
+	font-family: Arial;
 }
-
+dt{
+	padding-top:15px;
+}
+.quotebubble{
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 12px;
+	padding: 1em;
+	font-family: "Times New Roman";
+	font-size:13 pt;
+	width: 90%;
+}
+.quotebubble > img{
+	margin-right: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+p:not(.quotebubble){
+	font-size: 13pt;
+}
+p:not(.quotebubble)> img{
+	float:left;
+	margin-right:5px;
+}
+.publication{
+	font-style: italic;
+}
 
