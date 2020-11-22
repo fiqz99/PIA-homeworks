@@ -1,0 +1,28 @@
+body{
+	background-color:#b3ffdd;
+}
+h1 {
+	text-align:center;
+	font-family: Brush Script MT,cursive;
+}
+h2{
+	text-align:center;
+}
+h5{
+	text-align:center;
+}
+h6{
+	padding-left:20pt;
+	font-size: 15pt;
+}
+main {
+	padding-top: 50px;
+}
+.sastojci{
+	padding-top: 20pt;
+	font-weight:bold;
+}
+footer{
+	background-color: lightgreen;
+	padding-left: 200pt;
+}
