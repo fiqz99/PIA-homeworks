@@ -15,6 +15,7 @@ opt2.style.visibility = 'hidden';
 opt3.style.visibility = 'hidden';
 tb1.style.visibility = 'hidden';
 question.style.visibility = 'hidden';
+qPanel.style.visibility='hidden';
 
 function start(){ 							//funkcija za zapocinjanje kviza
 		setTimeout(function(){ 
@@ -29,9 +30,12 @@ function start(){ 							//funkcija za zapocinjanje kviza
 		opt3.style.visibility = 'visible';
 		tb2.style.visibility = 'hidden';
 		question.style.visibility = 'visible';
+		qPanel.style.visibility='visible';
 		generate(0);
 		startTimer();
 		name=document.getElementById('tb2').value
+		document.getElementById("nestaje").style.display = "none";
+
 		}, 1000);
 		
 }
@@ -77,8 +81,8 @@ function checkAnswer2(){ //funkcija koja broji poene ako je tacan odgovor 2
 		correctCount++;
 	}
 }
-function checkAnswer2(){ //funkcija koja broji poene ako je tacan odgovor 3
-	if (jsonData[i].opt2==jsonData[i].ans){
+function checkAnswer3(){ //funkcija koja broji poene ako je tacan odgovor 3
+	if (jsonData[i].opt3==jsonData[i].ans){
 		correctCount++;
 	}
 }	
@@ -109,17 +113,15 @@ function checkAnswer(){ 		//funkcija koja uporedjuje uneti odgovor sa tacnim odg
 		alert("Odgovor je netacan! Tacan odgovor je " + jsonData[i].ans );
 		}
 	}
-	counter=20;
+	disableButtons();
+	btn0.disabled = 'true';
 	timer.style.visibility = 'hidden';
+	counter=20;
 	stopCounter=0;
-	
 	setTimeout(function(){ 
 		i++;
 		generate(i);
-		document.getElementById("opt1").style.backgroundColor = "white";
-		document.getElementById("opt2").style.backgroundColor = "white";
-		document.getElementById("opt3").style.backgroundColor = "white";
-		document.getElementById("tb1").value="";
+		resetAnswers();
 		if (jsonData.length-1<i){ //funkcija koja proverava da li je doslo do poslednjeg pitanja
 			quit();
 		}
@@ -127,6 +129,7 @@ function checkAnswer(){ 		//funkcija koja uporedjuje uneti odgovor sa tacnim odg
 			stopCounter=1;
 			timer.style.visibility = 'visible';
 		}
+		enableButtons();
 	}, 3000);
 }
 function nextQuestion(){		//funkcija za preskakanje pitanja
@@ -135,6 +138,7 @@ function nextQuestion(){		//funkcija za preskakanje pitanja
 	counter=20;
 	btn1.style.visibility = 'hidden';
 	timer.style.visibility = 'hidden';
+	disableButtons();
 	setTimeout(function(){ 
 		generate(i);
 		if (jsonData.length-1<i){ //funkcija koja proverava da li je doslo do poslednjeg pitanja
@@ -144,10 +148,11 @@ function nextQuestion(){		//funkcija za preskakanje pitanja
 		stopCounter=1;
 		timer.style.visibility = 'visible';
 		}
+		enableButtons();
 	}, 3000);
 }
 function quit(){ 		//funkcija za odustajanje
-	document.getElementById("question").innerHTML=name + "je osvojio " + correctCount + " poena!";
+	document.getElementById("question").innerHTML=name + " je osvojio " + correctCount + " poena!";
 	btn1.style.visibility = 'hidden'; 
 	btn2.style.visibility = 'hidden';
 	btn3.style.visibility = 'hidden';
@@ -178,4 +183,29 @@ function startTimer(){
 }
 	}
 setInterval(timeIt, 1000); //postavljanje intervala na 1 sekundu
+}
+function disableButtons(){
+	document.getElementById("opt1").disabled= true;
+	document.getElementById("opt2").disabled= true;
+	document.getElementById("opt3").disabled= true;
+	document.getElementById("btn1").disabled= true;
+	document.getElementById("btn2").disabled= true;
+	document.getElementById("btn3").disabled= true;
+}
+function enableButtons(){
+	document.getElementById("opt1").disabled= false;
+	document.getElementById("opt2").disabled= false;
+	document.getElementById("opt3").disabled= false;
+	document.getElementById("btn1").disabled= false;
+	document.getElementById("btn2").disabled= false;
+	document.getElementById("btn3").disabled= false;
+}
+function resetAnswers(){
+	document.getElementById("opt1").style.backgroundColor = "white";
+	document.getElementById("opt2").style.backgroundColor = "white";
+	document.getElementById("opt3").style.backgroundColor = "white";
+	document.getElementById("tb1").value="";
+}
+function reloadPage(){
+	location.reload();
 }
