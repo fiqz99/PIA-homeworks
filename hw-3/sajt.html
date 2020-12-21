@@ -11,7 +11,48 @@
 	</div>
 	<div><input type="radio" id ="opt1" name="options">
 		<span id="optt1"></span>
+	</div><!DOCTYPE html>
+<html>
+<head>
+	<title> QUIZ </title>
+</head>
+
+<body>
+	<div>
+	<input type="text" id="tb2">
 	</div>
+	<div class="qPanel">
+	<br><button id="btn0" onclick="start()">Pokreni kviz</button>
+	<div id="question">
+	</div>
+	<div id="d1"><button onclick="checkAnswer(); checkAnswer1();" id ="opt1">
+		<span id="optt1"></span>
+		</button>
+	</div>
+	<div id="d2"> <button onclick="checkAnswer(); checkAnswer2();" id ="opt2">
+		<span id="optt2"></span>
+		</button>
+	</div>
+	<div id="d3"><button onclick="checkAnswer(); checkAnswer3();" id ="opt3">
+		<span id="optt3"></span>
+		</button>
+	</div>
+	<div>
+	<input type="text" id="tb1">
+	</div>
+	<button onclick="checkAnswer()" id="btn1" >Odgovori</button>
+	<button onclick="nextQuestion()" id="btn2">Preskoci pitanje</button>
+	<button onclick="quit()" id="btn3">Odustani</button>
+	</div>
+	<div>
+	<p id="timer"></p>
+	<div>
+	<script src="./podaci.js"></script>
+	<script src="./funkcije.js"></script>
+	
+	
+</body>
+</html>
 	<div><input type="radio" id ="opt2" name="options">
 		<span id="optt2"></span>
 	</div>
