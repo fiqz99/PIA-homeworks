@@ -1,0 +1,57 @@
+*{
+	box-sizing: border-box;
+	font-family: Garamond;
+	
+}
+
+html, body {
+	margin: 0;
+	padding:0;
+	
+}
+
+.head1 {
+	background-image: url(./pictures/header-background.jpg);
+	background-size: cover;
+	padding-bottom: 30px;
+	padding-top: 50px;
+}
+
+.naslov {
+	text-align: center;
+	margin: 0;
+	font-size:5em;
+	text-shadow: 3px 3px #777;
+}
+.content {
+	margin: 0 auto;
+	max-width: 900px;
+	background-color: #f2f7ff;
+}
+.opisKviza{
+	font-size: 1.5em;
+	text-align: justify;
+	text-justify: inter-word;
+}
+.tbStyle{
+	padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+}
+#qPanel{
+	width: 75%;
+	outline: 5px solid gray;
+	outline-offset: 5px;
+	padding: 0.5em;
+	background-color: #EEEEEE;
+	margin: auto;
+}
+#question{
+	text-align: center;
+}
