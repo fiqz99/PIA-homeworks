@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="style.css">
 	<title> QUIZ </title>
 </head>
 
 <body>
+	<header class="head1">
+	<h1 class="naslov">Geografski kviz - Zanimljiva geografija</h1>
+	</header>
+	<section class="content">
+	<div id = 'nestaje'>
+	<p class="opisKviza">Ovaj kviz sastoji se iz 10 pitanja, od kojih su neka sa ponudjenim odgovorima,
+	dok se u nekima zahteva da unesete odgovor. Svaki tacan odgovor nosi 1 poen, negativnih poena nema.
+	Testirajte svoje znanje, i srecno!</p>
+	
 	<div>
-	<input type="text" id="tb2">
+	<p class="opisKviza">Unesite svoje ime i prezime:</p>
+	<input type="text" id="tb2" maxlength="30" class="tbStyle">
 	</div>
-	<div class="qPanel">
-	<br><button id="btn0" onclick="start()">Pokreni kviz</button>
+	
+	<br><button id="btn0" onclick="start()" class="btnStyle1">Pokreni kviz</button>
+	</div>
+	<div>
+	<p id="timer"></p>
+	</div>
+	
+	<div id="qPanel">
 	<div id="question">
 	</div>
+	
 	<div id="d1"><button onclick="checkAnswer(); checkAnswer1();" id ="opt1">
 		<span id="optt1"></span>
 		</button>
 	</div>
+	
 	<div id="d2"> <button onclick="checkAnswer(); checkAnswer2();" id ="opt2">
 		<span id="optt2"></span>
 		</button>
 	</div>
+	
 	<div id="d3"><button onclick="checkAnswer(); checkAnswer3();" id ="opt3">
 		<span id="optt3"></span>
 		</button>
 	</div>
+	
 	<div>
 	<input type="text" id="tb1">
 	</div>
+	
 	<button onclick="checkAnswer()" id="btn1" >Odgovori</button>
 	<button onclick="nextQuestion()" id="btn2">Preskoci pitanje</button>
 	<button onclick="quit()" id="btn3">Odustani</button>
 	</div>
-	<div>
-	<p id="timer"></p>
-	<div>
+	
+	
+	
+	<button onclick="reloadPage()" id="btn4" >Pokusaj ponovo</button>
+	</section>
 	<script src="./podaci.js"></script>
 	<script src="./funkcije.js"></script>
-	
 	
 </body>
 </html>
