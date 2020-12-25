@@ -29,34 +29,34 @@
 	<div id="qPanel">
 	<div id="question">
 	</div>
-	
-	<div id="d1"><button onclick="checkAnswer(); checkAnswer1();" id ="opt1">
+	<br>
+	<div id="d1"><button onclick="checkAnswer(); checkAnswer1();" id ="opt1" class = "answerButton">
 		<span id="optt1"></span>
 		</button>
 	</div>
-	
-	<div id="d2"> <button onclick="checkAnswer(); checkAnswer2();" id ="opt2">
+	<br>
+	<div id="d2"> <button onclick="checkAnswer(); checkAnswer2();" id ="opt2" class = "answerButton">
 		<span id="optt2"></span>
 		</button>
 	</div>
-	
-	<div id="d3"><button onclick="checkAnswer(); checkAnswer3();" id ="opt3">
+	<br>
+	<div id="d3"><button onclick="checkAnswer(); checkAnswer3();" id ="opt3" class = "answerButton">
 		<span id="optt3"></span>
 		</button>
 	</div>
-	
+	<br>
 	<div>
-	<input type="text" id="tb1">
+	<input type="text" id="tb1"><p id="correctAnswer"></p>
+	</div>
+	<br>
+	<button onclick="checkAnswer()" id="btn1" class="answerButton2">Odgovori</button>
+	<button onclick="nextQuestion()" id="btn2" class="answerButton2">Preskoci pitanje</button>
+	<button onclick="quit()" id="btn3" class="answerButton2">Odustani</button>
 	</div>
 	
-	<button onclick="checkAnswer()" id="btn1" >Odgovori</button>
-	<button onclick="nextQuestion()" id="btn2">Preskoci pitanje</button>
-	<button onclick="quit()" id="btn3">Odustani</button>
-	</div>
 	
 	
 	
-	<button onclick="reloadPage()" id="btn4" >Pokusaj ponovo</button>
 	</section>
 	<script src="./podaci.js"></script>
 	<script src="./funkcije.js"></script>
