@@ -1,8 +1,15 @@
+
+}
 var i=0; //brojac koraka
 var correctCount=0; //brojac tacnih odgovora
 var counter=20; //brojac vremena
 var stopCounter=1; //promenljiva koja sluzi za zaustavljanje vremena
 var name=" "; //za ime ucesnika
+
+fetch('podaci.json')
+  .then(response => response.json())
+    .then(data => {jsonData=data
+    })
 
 btn1.style.visibility = 'hidden'; //pocetno stanje svih elemenata
 btn2.style.visibility = 'hidden';
@@ -16,8 +23,13 @@ opt3.style.visibility = 'hidden';
 tb1.style.visibility = 'hidden';
 question.style.visibility = 'hidden';
 qPanel.style.visibility='hidden';
+correctAnswer.style.visibility='hidden';
 
 function start(){ 							//funkcija za zapocinjanje kviza
+		if (document.getElementById("tb2").value==""){
+			alert("Morate uneti ime!")
+		}
+		else{
 		setTimeout(function(){ 
 		btn0.style.visibility = 'hidden';
 		btn2.style.visibility = 'visible';
@@ -35,8 +47,8 @@ function start(){ 							//funkcija za zapocinjanje kviza
 		startTimer();
 		name=document.getElementById('tb2').value
 		document.getElementById("nestaje").style.display = "none";
-
 		}, 1000);
+	}
 		
 }
 
@@ -105,12 +117,16 @@ function checkAnswer(){ 		//funkcija koja uporedjuje uneti odgovor sa tacnim odg
 		}
 	}
 	else  {				//brojac poena za pitanja u kojima se odgovor unosi sa tastature
-		if (document.getElementById('tb1').value.toLowerCase() == jsonData[i].ans){ //tacan odgovor
+		if (document.getElementById('tb1').value.toLowerCase() == jsonData[i].ans.toLowerCase()){ //tacan odgovor
 			correctCount++;
-			alert("Odgovor je tacan!");
+			correctAnswer.style.visibility='visible';
+			document.getElementById("correctAnswer").style.color="green";
+			document.getElementById("correctAnswer").innerHTML="Odgovor je tacan!"
 		}
 		else { 														//netacan odgovor
-		alert("Odgovor je netacan! Tacan odgovor je " + jsonData[i].ans );
+			correctAnswer.style.visibility='visible';
+			document.getElementById("correctAnswer").style.color="red";
+			document.getElementById("correctAnswer").innerHTML="Odgovor je netacan! Tacan odgovor je: "  + jsonData[i].ans;
 		}
 	}
 	disableButtons();
@@ -122,6 +138,7 @@ function checkAnswer(){ 		//funkcija koja uporedjuje uneti odgovor sa tacnim odg
 		i++;
 		generate(i);
 		resetAnswers();
+		correctAnswer.style.visibility='hidden';
 		if (jsonData.length-1<i){ //funkcija koja proverava da li je doslo do poslednjeg pitanja
 			quit();
 		}
@@ -201,9 +218,9 @@ function enableButtons(){
 	document.getElementById("btn3").disabled= false;
 }
 function resetAnswers(){
-	document.getElementById("opt1").style.backgroundColor = "white";
-	document.getElementById("opt2").style.backgroundColor = "white";
-	document.getElementById("opt3").style.backgroundColor = "white";
+	document.getElementById("opt1").style.backgroundColor = "#eae0c2";
+	document.getElementById("opt2").style.backgroundColor = "#eae0c2";
+	document.getElementById("opt3").style.backgroundColor = "#eae0c2";
 	document.getElementById("tb1").value="";
 }
 function reloadPage(){
