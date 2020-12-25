@@ -1,0 +1,63 @@
+[
+	{
+		"q":"Koji je jedini grad u bivšoj SFRJ bio domaćin olimpijskih igara?",
+		"opt1":"Ljubljana",
+		"opt2":"Beograd",
+		"opt3":"Sarajevo",
+		"ans":"Sarajevo"
+	},
+	{
+		"q":"Posle Rusije, koja je najmnogoljudnija vecinski pravoslavna zemlja?",
+		"opt1":"Ukrajina",
+		"opt2":"Etiopija",
+		"opt3":"Belorusija",
+		"ans":"Etiopija"
+	},
+	{
+		"q":"Koji je glavni grad Turske?",
+		"ans":"Ankara"
+	},
+	{
+		"q":"Koje je službeno pismo Mongolije?",
+		"opt1":"Ćirilica",
+		"opt2":"Latinica",
+		"opt3":"Kinesko pismo",
+		"ans":"Ćirilica"
+	},
+	{
+		"q":"Koji je grad poslednja stanica transsibirske železničke pruge, najduže na svetu?",
+		"opt1":"Krasnojarsk",
+		"opt2":"Novosibirsk",
+		"opt3":"Vladivostok",
+		"ans":"Vladivostok"
+	},
+	{
+		"q":"U kom gradu se nalazi najprometniji amerčki aerodrom?",
+		"ans":"Atalanta"
+	},
+	{
+		"q":"Koje ostrvo je poznato i kao suza Indije?",
+		"opt1":"Šri Lanka",
+		"opt2":"Java",
+		"opt3":"Sumatra",
+		"ans":"Šri Lanka"
+	},
+	{
+		"q":"Kome pripadaju Foklandska ostrva?",
+		"opt1":"Ujedinjenom Kraljevstvu",
+		"opt2":"Argentini",
+		"opt3":"Brazilu",
+		"ans":"Ujedinjenom Kraljevstvu"
+	},
+	{
+		"q":"Koje slatkovodno jezero je najveće po zapremini?",
+		"ans":"Bajkalsko"
+	},
+	{
+		"q":"Najviši vrh sveta je Mont Everest, a koji je drugi po visini?",
+		"opt1":"K2",
+		"opt2":"Akonkagva",
+		"opt3":"Elbrus",
+		"ans":"K2"
+	}
+]
