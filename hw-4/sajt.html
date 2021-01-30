@@ -2,33 +2,45 @@
 <html>
     <head>
         <title>
-        DEMO PAGE
+        MOVIES
         </title>
         <link href="style.css" rel="stylesheet">
         
     </head>
      <body>
+      
         <div id="logIn">
           <label class="l1">Korisnicko ime:</label><br>
           <input type="text" id="liName" placeholder="Username or e-mail" class="tb1"><br><br>
           <label class="l1">Lozinka:</label><br>
           <input type="password" id="liPass" placeholder="Password" class="tb1"><br><br>
-          <button id="logInBttn" onclick="()" class="btn1" class="tb1">Log in</button><br><br>
+          <button id="logInBttn" onclick="logIn1()" class="btn1" class="tb1">Log in</button><br><br>
           <button id="newAcc" onclick="change1()" class="btn1" class="tb1">Nemas nalog?</button>
         </div>
+      
         <div id="register">
           <label class="l1">Ime i prezime:</label><br>
           <input type="text" id="rName" class="tb1" placeholder="Name and Surname"><br><br>
+
           <label class="l1">E-mail:</label><br>
           <input type="email" id="rMail" class="tb1" placeholder="example@something.com"><br><br>
+
           <label class="l1">Korisnicko ime:</label><br>
           <input type="text" id="rUser" class="tb1" placeholder="Username"><br><br>
+
           <label class="l1">Lozinka:</label><br>
           <input type="password" id="rPass" class="tb1" placeholder="Password"><br><br>
-          <button onclick="()" id="regBttn" class="btn1">Register</button><br><br>
+          
+          <button onclick="signUp()" id="regBttn" class="btn1">Register</button><br><br>
           <button onclick="change2()" id="oldAcc" class="btn1">Imas nalog?</button>
         </div>
 
         <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
+        <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+
     </body>
 </html>
