@@ -1,18 +1,21 @@
 <?php
   $conn = new mysqli('localhost', 'fiqz99', 'test1234', 'filmovi');
   $query= "SELECT * FROM filmovi";
+  $query2="SELECT * FROM filmovi";
   $result=mysqli_query($conn, $query);
+  $result2=mysqli_query($conn, $query2)
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
+        <title >
         MOVIES
         </title>
         <link href="style.css" rel="stylesheet">
         
     </head>
      <body>
+     <button onclick="location.reload()" id="logOut" class="btn1">LogOut</button><br><br>
         <div id="logIn" class="logSign">
           <label class="l1">Korisnicko ime:</label><br>
           <input type="text" id="liName" placeholder="Username or e-mail" class="tb1"><br><br>
@@ -39,10 +42,11 @@
         </div>
 
         <div id="admin" class="admin">
-          <h1>ADMIN STRANICA</h1>
+          <h1 class="l1">ADMIN STRANICA</h1>
           <div id="adminButtons">
           <button onclick="addMovie()" id="addMov" class="btn2">Dodaj film</button>
           <button onclick="editMovie()" id="edMov" class="btn2">Izmeni/obrisi</button>
+          <button onclick="location.reload()" id="rel" class="btn2">Izloguj se</button>
           </div>
           <div id="add">
             
@@ -79,7 +83,8 @@
             <button onclick="addMovie2()" id="addMov2" class="btn2">Dodaj!</button>
             <button onclick="backAdmin()" id="addMov3" class="btn2">Vrati se!</button>
           </div>
-          <button onclick="changeMovie3()" id="chMov3" class="btn2">Izmeni</button>
+          <button onclick="changeMovie3()" id="chMov3" >Izmeni</button>
+          
           <div id="change">
 
             <table id="tabela" border="1px" style="width:600px; line-height:40px" background-color="blue">
@@ -90,7 +95,7 @@
                 <th>ID</th>
                 <th>Film</th>
                 <th>Godina</th>
-                <th>Trajanje</th>
+                <th>Fotografija</th>
               </t>
               <?php
                 while($rows=mysqli_fetch_assoc($result))
@@ -100,7 +105,7 @@
                     <td><?php echo $rows['movie_id']; ?></td>
                     <td><?php echo $rows['title']; ?></td>
                     <td><?php echo $rows['year']; ?></td>
-                    <td><?php echo $rows['lenght']; ?></td>
+                    <td><img src=<?php echo $rows['picture_path']; ?> style="width:75px;height:150px;"></td>
                   </tr>
               <?php
                 }
@@ -119,7 +124,46 @@
         </div>
         
         <div id="user">
-          <h1>IMDB</h1>
+          <h1 align="center" class="l1">IMDB</h1>
+          
+          <div class="organizacija">
+              <?php
+                while($rows1=mysqli_fetch_assoc($result2))
+                {
+                  ?>
+                  <div class="container2">
+                  <button onclick="showMoreLess()" class="btn2" id=<?php echo $rows1['movie_id']?>>more/less</button>
+                  <div class="container">
+                    <img src=<?php echo $rows1['picture_path']; ?> style="width:400px;height:750px;" class="image">
+                      <div class="overlay">
+                        <div class="text"><?php echo $rows1['title'];?></div>
+                        <br><br><br><br><br>
+                        <div class="text2">Description: <?php echo $rows1['description']; ?></div><br><br>
+                        <div class="text2">Genre: <?php echo $rows1['genre']; ?></div><br><br>
+                        <div class="text2">Actors: <?php echo $rows1['actors']; ?></div><br><br>
+                        <div class="text2">Writters: <?php echo $rows1['written_by']; ?></div><br><br>
+                        <div class="text2">Directors: <?php echo $rows1['directed_by']; ?></div><br><br>
+                        <div class="text2">Producer: <?php echo $rows1['produced_by']; ?></div><br><br>
+                        <div class="text2">Year: <?php echo $rows1['year']; ?></div><br><br>
+                        <div class="text2">Lenght: <?php echo $rows1['lenght']; ?></div><br><br>
+                        <div class="text2">Average rate: <?php echo $rows1['avg_rate']; ?></div><br><br>
+                        <div class="text2">Number of votes: <?php echo $rows1['num_votes']; ?></div><br><br>
+                        <div class="text2">IMDB movie ID: <?php echo $rows1['movie_id']; ?></div><br><br>
+                      </div>
+                  </div>
+               </div>
+              <?php
+                }
+                ?>
+              <div class="ocena">
+                <label class="l1">Movie id:</label><br>
+                <input type="number" id="base_id" class="tb1"><br><br>
+                <label class="l1">Rate 1-10:</label><br>
+                <input type="number" id="user_rate" class="tb1" min="1" max="10"><br><br>
+                <button onclick="rate()" id="addRate" class="btn2">Rate!</button>
+              </div>
+          </div>
+          
         </div>
 
         <script src="script.js"></script>
